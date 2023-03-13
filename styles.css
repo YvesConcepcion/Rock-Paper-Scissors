@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.gamecontainer {
+  /* border: 2px solid red; */
+  padding-top: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  gap: 30px;
+}
+
+.playerUI,
+.computerUI {
+  width: 400px;
+  height: 250px;
+  background-color: aliceblue;
+  border: 2px solid blue;
+  text-align: center;
+}
+
+.namecontainer {
+  display: flex;
+  justify-content: center;
+}
+
+.score {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}

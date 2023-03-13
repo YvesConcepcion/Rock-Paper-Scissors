@@ -4,71 +4,37 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script>
-      let playerScore = 0;
-      let compScore = 0;
-      const getComputerChoice = function () {
-        const computerArray = ["rock", "paper", "scissors"];
-        let random = Math.floor(Math.random() * computerArray.length);
-        let computerSelection = computerArray[random];
-        console.log(computerSelection);
-        return computerSelection;
-      };
-
-      const playerSelection = function () {
-        let resp = prompt("What is your choice?");
-        let playerSelection = resp.toLowerCase();
-        console.log(playerSelection);
-        return playerSelection;
-      };
-
-      const playRound = function (playerSelection, computerSelection) {
-        if (
-          (computerSelection === "rock" && playerSelection === "paper") ||
-          (computerSelection === "scissors" && playerSelection === "rock") ||
-          (computerSelection === "paper" && playerSelection === "scissors")
-        ) {
-          let result = "win";
-          playerScore += 1;
-          console.log(
-            `You ${result}! ${playerSelection} beats ${computerSelection}`
-          );
-          console.log(playerScore);
-          return playerScore;
-        } else if (
-          (computerSelection === "paper" && playerSelection === "rock") ||
-          (computerSelection === "rock" && playerSelection === "scissors") ||
-          (computerSelection === "scissors" && playerSelection === "paper")
-        ) {
-          let result = "lose";
-          compScore += 1;
-          console.log(
-            `You ${result}! ${playerSelection} beats ${computerSelection}`
-          );
-          console.log(compScore);
-          return compScore;
-        } else {
-          let result = "tie";
-          console.log("It's a tie!");
-          return result;
-        }
-      };
-
-      const game = function () {
-        while (playerScore < 5 && compScore < 5) {
-          playRound(playerSelection(), getComputerChoice());
-          if (playerScore === 5) {
-            console.log("You win!");
-          } else if (compScore === 5) {
-            console.log("You lose!");
-          }
-        }
-      };
-
-      game();
-    </script>
-
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css"></style>
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <h1 class="typed">Rock, Paper, Scissors?</h1>
+    </div>
+    <div class="gamecontainer">
+      <div class="playerUI">
+        <div class="namecontainer">
+          <img class="player" src="/images/player.png" alt="player" width="50" height="50">   <H3>PLAYER</H3>
+        </div>
+        <P class="score">SCORE:0</P>
+        <div class="buttons">
+        <button><img src="/images/rock.png" alt="Rock" width="90" height"50"></button>
+         <button><img src="/images/paper.png" alt="Paper" width="90" height"50"></button>
+         <button><img src="/images/scissors.png" alt="Scissors" width="90" height"50"></button>
+      </div>
+      </div>
+    <div class="computerUI">
+      <div class="namecontainer">
+        <img class="bot" src="/images/bot.png" alt="bot" width="50" height="50">  
+        <H3>COMPUTER</H3>
+      </div>
+        <P class="score">SCORE:0</P>
+        <button><img src="/images/rock.png" alt="Rock" width="90" height"50"></button>
+       <button><img src="/images/paper.png" alt="Paper" width="90" height"50"></button>
+        <button><img src="/images/scissors.png" alt="Scissors" width="90" height"50"></button>
+    </div>
+  </div>
+  </div>
+  </body>
 </html>
