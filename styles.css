@@ -3,6 +3,17 @@ body {
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  background: rgb(186, 186, 186);
+  background: linear-gradient(
+    90deg,
+    rgba(186, 186, 186, 1) 2%,
+    rgba(201, 201, 201, 1) 18%,
+    rgba(224, 224, 224, 1) 38%,
+    rgba(232, 232, 232, 1) 60%,
+    rgba(224, 224, 224, 1) 78%,
+    rgba(193, 193, 193, 1) 100%
+  );
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .gamecontainer {
@@ -13,16 +24,27 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  gap: 30px;
+  gap: 20px;
 }
 
 .playerUI,
 .computerUI {
-  width: 400px;
+  padding-top: 16px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex-shrink: 1;
+  min-width: 200px;
+  max-width: 500px;
+  width: 100%;
   height: 250px;
-  background-color: aliceblue;
-  border: 2px solid blue;
+  background-color: rgb(255, 255, 255);
+  border: 2px solid rgb(97, 97, 97);
   text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  margin: 20px;
 }
 
 .namecontainer {
@@ -34,7 +56,47 @@ body {
   text-align: center;
 }
 
-.container {
-  display: flex;
+.typed-child {
+  font-size: 36px;
+  text-align: center;
+}
+
+/* @keyframes typed-child {
+  from {
+    width: 0;
+  }
+  to {
+    width: 18em;
+  }
+} */
+
+.botscore,
+.playerscore {
+  margin-top: -10px;
+}
+
+button {
+  background-color: whitesmoke;
+  border-radius: 15px;
+  min-width: 50px;
+  max-width: 110px;
+  width: 100%;
+}
+
+.start {
+  width: 50%;
+  font-size: 30px;
+  text-align: center;
+}
+
+.button--choices {
   justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 15px;
+}
+
+.winLose {
+  text-align: center;
 }
