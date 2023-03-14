@@ -17,34 +17,33 @@ body {
 }
 
 .gamecontainer {
-  /* border: 2px solid red; */
-  padding-top: 50px;
+  /* borde  padding: 0%;
+r: 2px solid red; */
+  padding-top: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .playerUI,
 .computerUI {
-  padding-top: 16px;
+  display: inline-block;
+  padding-top: 15px;
   font-size: 20px;
-  display: flex;
-  flex-direction: column;
   flex-wrap: nowrap;
   flex-shrink: 1;
   min-width: 200px;
-  max-width: 500px;
+  max-width: 400px;
   width: 100%;
-  height: 250px;
+  height: 240px;
   background-color: rgb(255, 255, 255);
   border: 2px solid rgb(97, 97, 97);
   text-align: center;
   border-radius: 20px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
-  margin: 20px;
 }
 
 .namecontainer {
@@ -52,23 +51,16 @@ body {
   justify-content: center;
 }
 
-.score {
+#score1el,
+#score0el {
   text-align: center;
+  margin-top: -10px;
 }
 
 .typed-child {
   font-size: 36px;
   text-align: center;
 }
-
-/* @keyframes typed-child {
-  from {
-    width: 0;
-  }
-  to {
-    width: 18em;
-  }
-} */
 
 .botscore,
 .playerscore {
@@ -83,10 +75,19 @@ button {
   width: 100%;
 }
 
-.start {
-  width: 50%;
-  font-size: 30px;
-  text-align: center;
+.gamemenu {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.start,
+.retry {
+  font-size: 25px;
+}
+
+.retry {
+  width: 50px;
 }
 
 .button--choices {
@@ -97,6 +98,30 @@ button {
   gap: 15px;
 }
 
-.winLose {
-  text-align: center;
+.result-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+P#result {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+p#result-description {
+  margin-top: -30px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.btn {
+  cursor: pointer;
+  filter: invert(0);
+  transition: filter 0.2s ease-in-out;
+}
+
+.btn:hover {
+  filter: invert(1);
 }

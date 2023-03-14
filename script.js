@@ -4,8 +4,10 @@
 const btnRock = document.querySelector('.btn--rock');
 const btnPaper = document.querySelector('.btn--paper');
 const btnScissors = document.querySelector('.btn--scissors');
-const score0el = document.getElementById('.playerscore');
-const score1el = document.getElementById('.botscore');
+const score0el = document.getElementById('score0el');
+const score1el = document.getElementById('score1el');
+const outcome = document.getElementById('result');
+const outcomeDesc = document.getElementById('result-description');
 
 let playerScore, compScore, playing, playerSelection, computerSelection;
 
@@ -27,25 +29,28 @@ const playRound = function (playerSelection, computerSelection) {
     (computerSelection === 'Scissors' && playerSelection === 'Rock') ||
     (computerSelection === 'Paper' && playerSelection === 'Scissors')
   ) {
-    let result = 'win';
     playerScore += 1;
-    console.log(`You ${result}! ${playerSelection} beats ${computerSelection}`);
-    console.log(playerScore);
+    outcome.textContent = `YOU WIN!`;
+    return (
+      (outcomeDesc.textContent = `${playerSelection} beats ${computerSelection}!`),
+      (score0el.textContent = `Score: ${playerScore}`)
+    );
     return playerScore;
   } else if (
     (computerSelection === 'Paper' && playerSelection === 'Rock') ||
     (computerSelection === 'Rock' && playerSelection === 'Scissors') ||
     (computerSelection === 'Scissors' && playerSelection === 'Paper')
   ) {
-    let result = 'lose';
     compScore += 1;
-    console.log(`You ${result}! ${playerSelection} beats ${computerSelection}`);
-    console.log(compScore);
-    return compScore;
+    outcome.textContent = `YOU LOSE!`;
+    return (
+      (outcomeDesc.textContent = `${playerSelection} beats ${computerSelection}!`),
+      (score1el.textContent = `Score: ${compScore}`)
+    );
   } else {
-    let result = 'tie';
-    console.log("It's a tie!");
-    return result;
+    return (
+      (outcome.textContent = `IT'S A TIE!`), (outcomeDesc.textContent = ``)
+    );
   }
 };
 
@@ -69,13 +74,13 @@ btnScissors.addEventListener('click', function () {
   playRound('Scissors', getComputerChoice());
 });
 
-const game = function () {
-  while (playerScore < 5 && compScore < 5) {
-    playRound(playerSelection(), getComputerChoice());
-    if (playerScore === 5) {
-      console.log('You win!');
-    } else if (compScore === 5) {
-      console.log('You lose!');
-    }
-  }
-};
+// const game = function () {
+//   while (playerScore < 5 && compScore < 5) {
+//     playRound(playerSelection(), getComputerChoice());
+//     if (playerScore === 5) {
+//       console.log('You win!');
+//     } else if (compScore === 5) {
+//       console.log('You lose!');
+//     }
+//   }
+// };

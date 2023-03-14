@@ -4,24 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="script.js"></script>
     <link rel="stylesheet" href="styles.css"></style>
     <title>Document</title>
   </head>
   <body>
-    <div class="container">
-      <h1 class="typed">Rock, Paper, Scissors?</h1>
+    <main>
+    <div class="typed">
+      <h1 class="typed-child">Rock, Paper, Scissors?</h1>
+    </div>
+    <div class="gamemenu">
+      <button class="start">START</h3>
+      <button class="retry">⟳</button>
     </div>
     <div class="gamecontainer">
       <div class="playerUI">
         <div class="namecontainer">
           <img class="player" src="/images/player.png" alt="player" width="50" height="50">   <H3>PLAYER</H3>
         </div>
-        <P class="score">SCORE:0</P>
-        <div class="buttons">
-        <button><img src="/images/rock.png" alt="Rock" width="90" height"50"></button>
-         <button><img src="/images/paper.png" alt="Paper" width="90" height"50"></button>
-         <button><img src="/images/scissors.png" alt="Scissors" width="90" height"50"></button>
+          <p id="score0el">SCORE:0</p>
+        <div class="button--choices">
+          <button class="btn btn--rock"><img src="/images/rock.png" alt="Rock" width="70" height"50"></button>
+          <button class="btn btn--paper"><img src="/images/paper.png" alt="Paper" width="70" height"50"></button>
+           <button class="btn btn--scissors"><img src="/images/scissors.png" alt="Scissors" width="70" height"50"></button>
       </div>
       </div>
     <div class="computerUI">
@@ -29,12 +33,20 @@
         <img class="bot" src="/images/bot.png" alt="bot" width="50" height="50">  
         <H3>COMPUTER</H3>
       </div>
-        <P class="score">SCORE:0</P>
-        <button><img src="/images/rock.png" alt="Rock" width="90" height"50"></button>
-       <button><img src="/images/paper.png" alt="Paper" width="90" height"50"></button>
-        <button><img src="/images/scissors.png" alt="Scissors" width="90" height"50"></button>
+        <p id="score1el">SCORE:0</p>
+        <div class="button--choices">
+          <button class="bot--rock"><img src="/images/rock.png" alt="Rock" width="70" height"50"></button>
+          <button class="bot--paper"><img src="/images/paper.png" alt="Paper" width="70" height"50"></button>
+         <button class="bot--scissors"><img src="/images/scissors.png" alt="Scissors" width="70" height"50"></button>
+      </div>
     </div>
   </div>
   </div>
+  <div class = "result-container">
+    <p id ="result">YOU WIN!</p>
+    <p id ="result-description">Scissors beat paper</p>
+  </div>
+  </main>
+<script src="script.js"></script>
   </body>
 </html>
