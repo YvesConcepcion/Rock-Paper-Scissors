@@ -83,16 +83,21 @@ button {
 .gamemenu {
   display: flex;
   justify-content: center;
-  gap: 16px;
 }
 
-.start,
-.retry {
-  font-size: 25px;
+.restart {
+  font-family: pixellari;
+  font-size: 20px;
+  background-color: #ccc;
+  color: #999;
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
-.retry {
-  width: 50px;
+.restart.active {
+  font-family: pixellari;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .button--choices {

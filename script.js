@@ -11,6 +11,7 @@ const outcomeDesc = document.getElementById('result-description');
 const botRock = document.querySelector('.bot--rock');
 const botPaper = document.querySelector('.bot--paper');
 const botScissors = document.querySelector('.bot--scissors');
+const restart = document.querySelector('restart.active');
 
 let playerScore, compScore, playing, playerSelection, computerSelection;
 
@@ -130,5 +131,3 @@ btnScissors.addEventListener('click', function () {
 // const game = function () {
 //   while (playerScore < 5 && compScore < 5) {
 //     playRound(playerSelection(), getComputerChoice());
-
-// };
