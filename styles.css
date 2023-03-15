@@ -13,7 +13,12 @@ body {
     rgba(224, 224, 224, 1) 78%,
     rgba(193, 193, 193, 1) 100%
   );
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Pixellari, Impact, Haettenschweiler, sans-serif;
+}
+
+@font-face {
+  font-family: Pixellari;
+  src: url(css/fonts/Pixellari.ttf);
 }
 
 .gamecontainer {
@@ -58,7 +63,7 @@ r: 2px solid red; */
 }
 
 .typed-child {
-  font-size: 36px;
+  font-size: 70px;
   text-align: center;
 }
 
@@ -107,21 +112,33 @@ button {
 
 P#result {
   font-size: 36px;
-  font-weight: bold;
 }
 
 p#result-description {
   margin-top: -30px;
   font-size: 25px;
-  font-weight: bold;
 }
 
 .btn {
   cursor: pointer;
-  filter: invert(0);
-  transition: filter 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
 }
 
 .btn:hover {
-  filter: invert(1);
+  background-color: lightgray;
+}
+
+.bot {
+  filter: invert(0);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.bot--rock.active,
+.bot--paper.active,
+.bot--scissors.active {
+  background-color: rgb(255, 84, 84);
+}
+
+.btn.active {
+  background-color: rgb(116, 116, 255);
 }

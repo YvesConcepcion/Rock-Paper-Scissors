@@ -8,6 +8,9 @@ const score0el = document.getElementById('score0el');
 const score1el = document.getElementById('score1el');
 const outcome = document.getElementById('result');
 const outcomeDesc = document.getElementById('result-description');
+const botRock = document.querySelector('.bot--rock');
+const botPaper = document.querySelector('.bot--paper');
+const botScissors = document.querySelector('.bot--scissors');
 
 let playerScore, compScore, playing, playerSelection, computerSelection;
 
@@ -58,29 +61,74 @@ const getComputerChoice = function () {
   const computerArray = ['Rock', 'Paper', 'Scissors'];
   let random = Math.floor(Math.random() * computerArray.length);
   let computerSelection = computerArray[random];
-  console.log(computerSelection);
+  if (computerSelection === 'Rock')
+    botRock.classList.add('active'),
+      botPaper.classList.remove('active'),
+      botScissors.classList.remove('active');
+  if (computerSelection === 'Paper')
+    botPaper.classList.add('active'),
+      botRock.classList.remove('active'),
+      botScissors.classList.remove('active');
+  if (computerSelection === 'Scissors')
+    botScissors.classList.add('active'),
+      botRock.classList.remove('active'),
+      botPaper.classList.remove('active');
   return computerSelection;
 };
 
 btnRock.addEventListener('click', function () {
-  playRound('Rock', getComputerChoice());
+  if (playerScore < 5 && compScore < 5)
+    playRound('Rock', getComputerChoice()),
+      btnRock.classList.add('active'),
+      btnPaper.classList.remove('active'),
+      btnScissors.classList.remove('active');
+  if (playerScore === 5) {
+    outcome.textContent = `YOU WIN!!!`;
+    outcomeDesc.textContent = `Play again?`;
+    console.log('You win!');
+  } else if (compScore === 5) {
+    outcome.textContent = `YOU LOSE!!!`;
+    outcomeDesc.textContent = `Play again?`;
+    console.log('You lose!');
+  }
 });
 
 btnPaper.addEventListener('click', function () {
-  playRound('Paper', getComputerChoice());
+  if (playerScore < 5 && compScore < 5)
+    playRound('Paper', getComputerChoice()),
+      btnPaper.classList.add('active'),
+      btnRock.classList.remove('active'),
+      btnScissors.classList.remove('active');
+  if (playerScore === 5) {
+    outcome.textContent = `YOU WIN!!!`;
+    outcomeDesc.textContent = `Play again?`;
+    console.log('You win!');
+  } else if (compScore === 5) {
+    outcome.textContent = `YOU LOSE!!!`;
+    outcomeDesc.textContent = `Play again?`;
+    console.log('You lose!');
+  }
 });
 
 btnScissors.addEventListener('click', function () {
-  playRound('Scissors', getComputerChoice());
+  if (playerScore < 5 && compScore < 5)
+    playRound('Scissors', getComputerChoice()),
+      btnScissors.classList.add('active'),
+      btnRock.classList.remove('active'),
+      btnPaper.classList.remove('active');
+  if (playerScore === 5) {
+    outcome.textContent = `YOU WIN!!!`;
+    outcomeDesc.textContent = `Play again?`;
+    console.log('You win!');
+  } else if (compScore === 5) {
+    outcome.textContent = `YOU LOSE!!!`;
+    outcomeDesc.textContent = `Play again?`;
+    console.log('You lose!');
+  }
 });
 
 // const game = function () {
 //   while (playerScore < 5 && compScore < 5) {
 //     playRound(playerSelection(), getComputerChoice());
-//     if (playerScore === 5) {
-//       console.log('You win!');
-//     } else if (compScore === 5) {
-//       console.log('You lose!');
-//     }
-//   }
+
 // };
