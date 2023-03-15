@@ -1,4 +1,7 @@
 # Rock-Paper-Scissors
 This repo is part of The Odin Project's Foundations Course.
 
-Tools used. HTML, Javascript
+### What I've learned:
+* DOM Manipulation and Events
+* Git branching
+* CSS Flexbox
